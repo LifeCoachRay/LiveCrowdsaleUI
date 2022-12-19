@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+        background-color: rgb(4, 4, 4);
+        background-image: url("image/dog.png");
+    }
+    #donationForm {
+      width: 50%;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid rgb(10, 10, 10);
+      background-color: rgb(255, 38, 0);
+      box-shadow: #45a049;
+    }
+
+    #donationForm label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    #donationForm input[type="text"],
+    #donationForm input[type="email"],
+    #donationForm input[type="number"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 2px solid rgb(249, 130, 130);
+      border-radius: 4px;
+    }
+
+    #donationForm input[type="submit"] {
+      width: 100%;
+      background-color: #000000;
+      color: rgb(221, 22, 22);
+      padding: 14px 20px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #donationForm input[type="submit"]:hover {
+      background-color: green;
+    }
+    nav {
+        color: rgb(31, 228, 228);
+  text-align: center;
+  background: rgb(8, 8, 8);
+}
+footer {
+    color: blue;
+  text-align: center;
+  background: rgb(3, 3, 3);
+}
+:hover{
+    color: gold;
+}
+  </style>
+</head>
+<head>
+    <style>
+      #header {
+        background-color: rgb(2, 255, 2);
+        color: blue;
+        padding: 20px;
+        text-align: center;
+        background-image: url("../socialmediaapp/image/panda.png");
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>My CrowdSale Website</h1>
+    </div>
+  
+    <!-- Rest of the code goes here -->
+  </body>
+  
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#">Home</a> |
+    <a href="#">About</a> |
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Form -->
+  <form id="donationForm">
+    <p>Thank you for considering a donation to our crowdfunding campaign. Please enter your personal information and desired donation amount below, and click "Donate" to be redirected to the PayPal checkout page. Your support is greatly appreciated!</p>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" required><br>
+    <label for="amount">Donation Amount:</label><br>
+    <input type="number" id="amount" required><br><br>
+    <input type="submit" value="Donate">
+  </form>
+
+  <!-- Footer -->
+  <footer>
+    Copyright &copy; 2022 Donation Form
+  </footer>
+
+  <script>
+    document.getElementById('donationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Validate form
+      if (!document.getElementById('name').value || !document.getElementById('email').value || !document.getElementById('amount').value) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      // Redirect to PayPal checkout page
+      window.location.href = 'https://www.paypal.com/checkout';
+    });
+  </script>
+</body>
+</html>
